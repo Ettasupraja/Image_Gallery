@@ -30,133 +30,115 @@ Validate the HTML and CSS code
 Publish the website in the given URL.
 
 ## PROGRAM
-gallery.html
+
 ```
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Gallery</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Image Gallery</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+  margin: 0;
+  padding: 0;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.gallery-item {
+  width: 200px;
+  height: auto;
+  cursor: pointer;
+  border: 2px solid #ddd;
+  transition: transform 0.2s;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+  </style>
+  <script>
+    function openModal(image) {
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImage');
+  
+  modal.style.display = "flex";
+  modalImg.src = image.src;
+}
+
+function closeModal() {
+  const modal = document.getElementById('imageModal');
+  modal.style.display = "none";
+}
+
+  </script>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <div class="gallery">
+    <img src="c:\Users\admin\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\F6B192564928A1348DA491C4987E08C4\WhatsApp Image 2024-11-15 at 14.15.49_47e5013c.jpg" alt="Image 1" class="gallery-item" onclick="openModal(this)">
+    <img src="c:\Users\admin\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\E30FAF2040DBB22E0C56D1FF3C95ED0C\WhatsApp Image 2024-11-15 at 14.16.51_04ab2fe4.jpg" alt="Image 2" class="gallery-item" onclick="openModal(this)">
+    <img src="c:\Users\admin\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\4611B8FF403BEA67637C3F1911940668\WhatsApp Image 2024-11-15 at 14.17.27_c431161e.jpg" alt="Image 3" class="gallery-item" onclick="openModal(this)">
+    <img src="c:\Users\admin\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\56F9E53C06985234D40A35145C1A919E\WhatsApp Image 2024-11-15 at 14.19.07_5763a3fc.jpg" alt="Image 4" class="gallery-item" onclick="openModal(this)">
+    <img src="c:\Users\admin\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\E1A2719218AD9000036929229C99CD3A\WhatsApp Image 2024-11-15 at 14.20.05_6fd87f29.jpg" alt="Image 5" class="gallery-item" onclick="openModal(this)">
+    <img src="c:\Users\admin\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\2C9F13441C3F36D9422D5DE661E57742\WhatsApp Image 2024-11-15 at 14.21.57_3452cd06.jpg" alt="Image 6" class="gallery-item" onclick="openModal(this)">
+    <img src="c:\Users\admin\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\CF72E369BA89123691BCFAF253572530\WhatsApp Image 2024-11-15 at 14.23.56_63ed07ca.jpg" alt="Image 7" class="gallery-item" onclick="openModal(this)">
+    <img src="c:\Users\admin\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\60FF2F34A3371413AEA763296E66B04A\WhatsApp Image 2024-11-15 at 14.24.27_956f5515.jpg" alt="Image 8" class="gallery-item" onclick="openModal(this)">
+    
+  </div>
 
-    <main id="gallery">
-        <div class="gallery-container">
-            <img src="c:\Users\admin\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\243C74A16947D5D9D7ED8937AC3D2656\WhatsApp Image 2024-11-06 at 21.32.45_031c0865.jpg" alt="Image 1">
-            <img src="c:\Users\admin\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\4CADFA5FF153FB1C686F5F7535A23DC6\WhatsApp Image 2024-11-06 at 21.34.13_bdbf1b06.jpg" alt="Image 2">
-            <img src="c:\Users\admin\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\60BC551CA678C042256508C5A0F46689\WhatsApp Image 2024-11-06 at 21.37.51_98cf2f95.jpg" alt="Image 4">
-            <img src="c:\Users\admin\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\ACC4BA4EEC87758E9B2CA94782C41BB9\WhatsApp Image 2024-11-06 at 21.38.23_d7e75077.jpg" alt="Image 5">
-            <img src="c:\Users\admin\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\670F33F3CFB5217BCF008786165F1DC7\WhatsApp Image 2024-11-06 at 21.40.00_7a2baef8.jpg" alt="Image 6">
-            <img src="c:\Users\admin\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\9ABBBDA872050C52F250190578B0C178\WhatsApp Image 2024-11-06 at 21.42.19_986458be.jpg" alt="Image 7">
-            <img src="c:\Users\admin\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\F4FB3AD46ED38E0582C16FB84B610897\WhatsApp Image 2024-11-06 at 21.46.23_3cd35854.jpg" alt="Image 8">
-            <!-- Add more images as needed -->
-        </div>
-    </main>
+  <!-- Modal -->
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
 
-    <footer>
-        <p>&copy; 2024 Your Website</p>
-    </footer>
+  <script src="script.js"></script>
 </body>
 </html>
-
 ```
 
-models.py
-```
-class Image(models.Model):
-    title = models.CharField(max_length=50)
-    image = models.ImageField(upload_to='images/')
 
-    def __str__(self):
-        return self.title
-```
-
-settings.py
-```
-ALLOWED_HOSTS = ['*']
-```
-
-style.css
-```
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #333;
-    color: white;
-    padding: 13px 0;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 13px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-.gallery-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    padding: 20px;
-}
-
-.gallery-container img {
-    width: 50%;
-    height: 900;
-    border-radius: 10px;
-}
-
-footer {
-    text-align: center;
-    padding: 10px 0;
-    background-color: #f1f1f1;
-    margin-top: 20px;
-}
-```
-
-urls.py
-```
-from .views import gallery_view
-
-urlpatterns = [
-    path('', gallery_view, name='gallery'),
-]
-```
-
-views.py
-```
-from .models import Image
-
-def gallery_view(request):
-    images = Image.objects.all()
-    return render(request, 'gallery/gallery.html', {'images': images})
-```
 
 ## OUTPUT
+
+![WhatsApp Image 2024-11-15 at 14 31 16_2a027e21](https://github.com/user-attachments/assets/1830989c-c926-4f7b-a799-10237ed4279b)
 
 
 ## RESULT
